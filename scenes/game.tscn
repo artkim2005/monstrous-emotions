@@ -1,14 +1,19 @@
 [gd_scene format=3 uid="uid://dylyww51qc36b"]
 
 [ext_resource type="Script" uid="uid://6xchas8t7qoe" path="res://scripts/GameManager.gd" id="3_iywne"]
-[ext_resource type="Texture2D" uid="uid://cvbfv33qcvmi7" path="res://assets/temp_bg2.jpg" id="4_lbhrr"]
+[ext_resource type="Texture2D" uid="uid://cvbfv33qcvmi7" path="res://assets/backgrounds/temp_bg2.jpg" id="4_lbhrr"]
 [ext_resource type="Script" uid="uid://ds7t0fe68xkax" path="res://scripts/ButtonManager.gd" id="5_iywne"]
 
 [node name="Game" type="Node" unique_id=1665937417]
 
-[node name="GameManager" type="Node" parent="." unique_id=1902631381 node_paths=PackedStringArray("button_manager")]
+[node name="GameManager" type="Node" parent="." unique_id=1902631381 node_paths=PackedStringArray("button_manager", "background", "energy_label", "a_s", "d_u", "f_r")]
 script = ExtResource("3_iywne")
 button_manager = NodePath("../GridContainer")
+background = NodePath("../CanvasLayer/TextureRect")
+energy_label = NodePath("../Label")
+a_s = NodePath("../A-S")
+d_u = NodePath("../D-U")
+f_r = NodePath("../F-R")
 
 [node name="GridContainer" type="GridContainer" parent="." unique_id=27507095 node_paths=PackedStringArray("game_manager")]
 anchors_preset = 8
@@ -171,5 +176,36 @@ pivot_offset = Vector2(2434, 1612)
 texture = ExtResource("4_lbhrr")
 stretch_mode = 3
 
+[node name="Label" type="Label" parent="." unique_id=559665679]
+offset_left = 100.0
+offset_top = 100.0
+offset_right = 162.0
+offset_bottom = 123.0
+theme_override_font_sizes/font_size = 30
+text = "Energy: "
+
+[node name="A-S" type="Label" parent="." unique_id=1718139852]
+offset_left = 100.0
+offset_top = 100.0
+offset_right = 140.0
+offset_bottom = 123.0
+theme_override_font_sizes/font_size = 30
+
+[node name="D-U" type="Label" parent="." unique_id=853450163]
+offset_left = 100.0
+offset_top = 150.0
+offset_right = 140.0
+offset_bottom = 173.0
+theme_override_font_sizes/font_size = 30
+
+[node name="F-R" type="Label" parent="." unique_id=615450892]
+offset_left = 100.0
+offset_top = 200.0
+offset_right = 140.0
+offset_bottom = 223.0
+theme_override_font_sizes/font_size = 30
+
+[connection signal="change_state" from="GameManager" to="GridContainer" method="_on_change_state"]
 [connection signal="fill_room" from="GameManager" to="GridContainer" method="_on_fill_room"]
 [connection signal="assign_room" from="GridContainer" to="GameManager" method="_on_assign_room"]
+[connection signal="trigger_convo" from="GridContainer" to="GameManager" method="_on_trigger_convo"]

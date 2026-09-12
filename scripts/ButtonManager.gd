@@ -1,9 +1,11 @@
 extends GridContainer
 @export var game_manager : Node
 signal assign_room(room)
+signal trigger_convo(room)
 var buttons
+var state = 0
 
-var emotions = ["A", "S", "U", "D", "F", "R"]
+var emotions = ["A", "S", "D", "U", "F", "R"]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -13,8 +15,17 @@ func _ready() -> void:
 		buttons[i].text = emotions[game_manager.room_emotions[i]]
 
 func _on_button_pressed(index: int):
-	assign_room.emit(index)
+	if state == 0:
+		assign_room.emit(index)
+	else:
+		trigger_convo.emit(index)
 
 func _on_fill_room(room: Variant, tex: Variant) -> void:
 	buttons[room].icon = load(tex)
 	buttons[room].text = ""
+
+func _on_change_state() -> void:
+	if state == 0:
+		state = 1
+	else:
+		state = 0

@@ -3,12 +3,8 @@ class_name Monster
 
 var room = null
 
-var anxiety = 0
-var serenity = 0
-var uniformity = 0
-var disarray = 0
-var forgotten = 0
-var retrospective = 0
+var emotions = []
+
 var target_emotion
 var room_emotion
 
@@ -16,10 +12,10 @@ var queue_sprite
 var potential_names = ["monster1", "monster2", "monster3", "monster4", "monster5"]
 var current_name
 
-enum emotions {A, S, U, D, F, R}
-
 func _init():
-	target_emotion = randi_range(0, emotions.size() - 1) as emotions
+	emotions.resize(6)
+	emotions.fill(0)
+	target_emotion = randi_range(0, 5)
 	current_name = potential_names.pick_random()
 	var dir = DirAccess.open("res://assets/monster_sprites/")
 	if dir:

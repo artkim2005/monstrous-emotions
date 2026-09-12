@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvbfv33qcvmi7"
-path="res://.godot/imported/temp_bg2.jpg-432a1c47686b6a1ae2c17db5faf9febf.ctex"
+uid="uid://bm2dr7qcl3i4r"
+path="res://.godot/imported/forgotten_temp.jpg-8c26be0cc3e529051480f82ada5433ad.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/temp_bg2.jpg"
-dest_files=["res://.godot/imported/temp_bg2.jpg-432a1c47686b6a1ae2c17db5faf9febf.ctex"]
+source_file="res://assets/backgrounds/forgotten_temp.jpg"
+dest_files=["res://.godot/imported/forgotten_temp.jpg-8c26be0cc3e529051480f82ada5433ad.ctex"]
 
 [params]
 

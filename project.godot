@@ -28,10 +28,14 @@ directories/dch_directory={
 "yellow_placeholder": "res://characters/yellow_placeholder.dch"
 }
 directories/dtl_directory={
-"timeline1": "res://timelines/timeline1.dtl",
-"timeline2": "res://timelines/timeline2.dtl",
-"timeline3": "res://timelines/timeline3.dtl",
-"timeline4": "res://timelines/timeline4.dtl"
+"timeline1": "res://timelines/queue_timelines/timeline1.dtl",
+"timeline2": "res://timelines/queue_timelines/timeline2.dtl",
+"timeline3": "res://timelines/queue_timelines/timeline3.dtl",
+"timeline4": "res://timelines/queue_timelines/timeline4.dtl",
+"timeline5": "res://timelines/queue_timelines/timeline5.dtl",
+"timeline6": "res://timelines/queue_timelines/timeline6.dtl",
+"timeline7": "res://timelines/room_timelines/timeline7.dtl",
+"timeline8": "res://timelines/room_timelines/timeline8.dtl"
 }
 layout/style_directory={}
 layout/style_list=[]
